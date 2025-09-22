@@ -15,6 +15,24 @@
         rows: [
           {
             key: {
+              text: "Are you a witch, wizard or goblin"
+            },
+            value: {
+              text: data.areYouGoblin
+            
+            },
+            actions: {
+              items: [
+                {
+                  href: "/goblin",
+                  text: "Change",
+                  visuallyHiddenText: "if you are a witch, wizard or goblin"
+                }
+              ]
+            }
+          },
+          {
+            key: {
               text: "Do you have an example of when you performed magic"
             },
             value: {
