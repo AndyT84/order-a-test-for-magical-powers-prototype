@@ -8,7 +8,7 @@
 
 {% block beforeContent %}
   {{ backLink({
-    href: "/goblin",
+    href: "/start-page",
     text: "Back"
   }) }}
 {% endblock %}
@@ -16,33 +16,37 @@
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-      <form action="/example-answer" method="post" novalidate>
+      <form action="/goblin-answer" method="post" novalidate>
 
         {{ radios({
-          name: "magicPowersExample",
+          name: "areYouGoblin",
           fieldset: {
             legend: {
-              text: "Do you have an example of when you performed magic?",
+              text: "Are you one of the following?",
               isPageHeading: true,
               classes: "nhsuk-fieldset__legend--l"
             }
           },
           hint: {
-            text: "For example, you saw the future or cast a spell"
+            text: "Select one option"
           },
-          value: data.magicPowersExample,
+          value: data.areYouGoblin,
           items: [
             {
-              value: "Yes",
-              text: "Yes"
+              value: "Wizard",
+              text: "Wizard"
             },
             {
-              value: "No",
-              text: "No"
+              value: "Witch",
+              text: "Witch"
             },
             {
-              value: "Not sure",
-              text: "I'm not sure"
+              value: "Goblin",
+              text: "Goblin"
+            },
+                    {
+              value: "None of these",
+              text: "None of these"
             }
           ]
         }) }}

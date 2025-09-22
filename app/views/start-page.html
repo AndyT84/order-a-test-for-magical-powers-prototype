@@ -4,22 +4,7 @@
 
 {% set mainClasses = "nhsuk-main-wrapper--s" %}
 
-{% block beforeContent %}
-  {{ breadcrumb({
-    items: [
-      {
-        href: "#",
-        text: "Home"
-      },
-      {
-        href: "#",
-        text: "Section"
-      }
-    ],
-    href: "#",
-    text: "Subsection"
-  }) }}
-{% endblock %}
+
 
 {% block content %}
   <div class="nhsuk-grid-row">
@@ -47,7 +32,7 @@
 
       {{ button({
         text: "Start now",
-        href: "example"
+        href: "/goblin"
       }) }}
 
       <p>By using this service you are agreeing to our <a href="#">terms of use</a> and <a href="#">privacy policy</a>.</p>
