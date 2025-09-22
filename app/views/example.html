@@ -16,7 +16,7 @@
 {% block content %}
   <div class="nhsuk-grid-row">
     <div class="nhsuk-grid-column-two-thirds">
-      <form action="/details" method="post" novalidate>
+      <form action="/example-answer" method="post" novalidate>
 
         {{ radios({
           name: "magicPowersExample",
@@ -30,7 +30,7 @@
           hint: {
             text: "For example, you can see the future or cast spells"
           },
-          value: data.example,
+          value: data.magicPowersExample,
           items: [
             {
               value: "Yes",
