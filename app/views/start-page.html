@@ -1,1 +1,57 @@
 {% extends "layout.html" %}
+{% from 'breadcrumb/macro.njk' import breadcrumb %}
+{% from 'button/macro.njk' import button %}
+
+{% set mainClasses = "nhsuk-main-wrapper--s" %}
+
+{% block beforeContent %}
+  {{ breadcrumb({
+    items: [
+      {
+        href: "#",
+        text: "Home"
+      },
+      {
+        href: "#",
+        text: "Section"
+      }
+    ],
+    href: "#",
+    text: "Subsection"
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1>Order a test to see if you have magical powers</h1>
+      <p>Use this service to order a test to see if you have magical powers.</p>
+      <p>You cannot  use this service if you are:</p>
+      <ul>
+        <li>a wizard</li>
+        <li>a witch</li>
+        <li>a goblin</li>
+      </ul>
+
+      {% from 'warning-callout/macro.njk' import warningCallout %}
+
+{{ warningCallout({
+  heading: "Add a warning",
+  text: "Add something later."
+}) }}
+
+      <h2>Before you start</h2>
+
+      <p>We'll ask for an example of when you performed magic.</p>
+
+      {{ button({
+        text: "Start now",
+        href: "example"
+      }) }}
+
+      <p>By using this service you are agreeing to our <a href="#">terms of use</a> and <a href="#">privacy policy</a>.</p>
+
+    </div>
+  </div>
+{% endblock %}
