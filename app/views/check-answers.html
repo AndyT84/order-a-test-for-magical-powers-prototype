@@ -1,0 +1,71 @@
+{% extends 'layout.html' %}
+
+{% from 'button/macro.njk' import button %}
+{% from 'summary-list/macro.njk' import summaryList %}
+
+
+{% block content %}
+  <div class="nhsuk-grid-row">
+    <div class="nhsuk-grid-column-two-thirds">
+
+      <h1 class="nhsuk-heading-l">Check your answers before sending your application</h1>
+
+
+      {{ summaryList({
+        rows: [
+          {
+            key: {
+              text: "Do you have an example of when you performed magic"
+            },
+            value: {
+              text: data.magicPowersExample
+            
+            },
+            actions: {
+              items: [
+                {
+                  href: "/example",
+                  text: "Change",
+                  visuallyHiddenText: "if you have an example of when you performed magic"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Description of example"
+            },
+            value: {
+              text: data.details
+            },
+            actions: {
+              items: [
+                {
+                  href: "/details",
+                  text: "Change",
+                  visuallyHiddenText: "description of example"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+      <h2 class="nhsuk-heading-m">
+        Now send your application
+      </h2>
+
+      <p>
+        Your details will be sent to The Magic Council for review.
+      </p>
+
+      <form action="/confirmation" method="post" novalidate>
+        {{ button({
+          text: "Confirm and send"
+        }) }}
+      </form>
+
+    </div>
+  </div>
+{% endblock %}
