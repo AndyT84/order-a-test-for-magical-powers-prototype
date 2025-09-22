@@ -56,7 +56,7 @@ router.post('/example-answer', (req, res) => {
   } else {
 
     // Send user back to the question page
-    res.redirect('/example')
+    res.redirect('/ineligible')
 
   }
 
